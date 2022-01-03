@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <style>
+        body {
+            background-image: linear-gradient(90deg, rgba(25, 136, 247, 1) 0%, rgba(247, 25, 136, 1) 100%);
+            text-align: center;
+        }
+        
+        button {
+            width: 200px;
+            border-bottom: 50px;
+            border-color: darkblue;
+            padding: 25px;
+            margin: 20px;
+            background-color: crimson;
+            box-shadow: 10px 10px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="example-1" style="text-align: center;">
+        <button @click="plus(10)" class="btn"><div><img src="Like.png" width="80" height="80" @click="likes(1)">
+            <br>Like ={{like}}</div></button>
+        <button @click="plus(20)" class="btn"><div><img src="Love.png" width="80" height="80" @click="loves(1)">
+            <br>Love ={{love}}</div></button>
+        <button @click="plus(25)" class="btn"><div><img src="smiley.png" width="80" height="80" @click="hahas(1)">
+            <br> smiley ={{smiley}}</div></button>
+        <button @click="plus(30)" class="btn"><div><img src="wow.png" width="80" height="80" @click="wows(1)">
+            <br> Wow ={{wow}}</div></button>
+        <button @click="minus(15)" class="btn"><div><img src="sad.png" width="80" height="80" @click="sads(1)">
+            <br>Sad ={{sad}}</div></button>
+        <button @click="minus(50)" class="btn"><div><img src="angry.png" width="80" height="80" @click="angrys(1)">
+            <br>Angry ={{angry}}</div></button>
+        <h1 style="text-align: center;">Like {{ counter }} Score.</h1>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+            counter: 0,
+            like: 0,
+            love: 0,
+            smiley: 0,
+            wow: 0,
+            sad: 0,
+            angry: 0,
+        },
+        methods: {
+            plus: function(i) {
+                this.counter += i;
+            },
+            minus: function(i) {
+                this.counter -= i;
+            },
+            likes: function(i) {
+                this.like += i;
+            },
+            loves: function(i) {
+                this.love += i;
+            },
+            hahas: function(i) {
+                this.smiley += i;
+            },
+            wows: function(i) {
+                this.wow += i;
+            },
+            sads: function(i) {
+                this.sad += i;
+            },
+            angrys: function(i) {
+                this.angry += i;
+            }
+        }
+    })
+</script>
